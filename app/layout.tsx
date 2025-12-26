@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   keywords: ['Next.js', 'React', 'Tailwind CSS', 'Frontend', 'Portfolio', 'Designer'],
 };
 
-// Next.js 15 uses a separate viewport export to control scaling and dimensions
-// This is critical for ensuring the site doesn't feel "too big" or incorrectly scaled on mobile/desktop
+// This prevents the user from accidentally zooming in or horizontal scrolling
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth overflow-x-hidden">
       <body
         className={`
           ${geistSans.variable} 
@@ -43,10 +43,16 @@ export default function RootLayout({
           min-h-screen 
           selection:bg-navy 
           selection:text-white
+          w-full
           max-w-[1920px] 
           mx-auto
+          overflow-x-hidden
         `}
       >
+        {/* Adding 'overflow-x-hidden' to both html and body is the 
+          standard way to stop horizontal scrolling on mobile caused 
+          by entrance animations or wide components.
+        */}
         {children}
       </body>
     </html>

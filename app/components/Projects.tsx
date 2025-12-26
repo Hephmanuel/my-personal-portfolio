@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 
 // Define a type for a single project item
 interface Project {
@@ -67,11 +68,14 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         />
       </div>
 
-      {/* Header - Arrow icon removed to avoid misleading users */}
-      <div className="mb-2">
+      {/* Header - Now includes an arrow icon only for clickable projects */}
+      <div className="mb-2 flex items-center justify-between">
         <h3 className={`text-2xl font-bold text-deepNavy ${isClickable ? 'group-hover:underline' : ''}`}>
           {project.title}
         </h3>
+        {isClickable && (
+          <ArrowUpRight className="w-6 h-6 text-deepNavy transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        )}
       </div>
 
       <p className="text-buttonText mb-4 text-md">
@@ -109,15 +113,15 @@ export default function Projects() {
   return (
     <motion.section 
       id="projects" 
-      className="py-24 md:py-36 bg-primaryBg"
+      className="py-24 md:py-36 bg-primaryBg px-4 sm:px-6 lg:px-8"
       variants={projectContainerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
         <motion.h2 
-          className="text-5xl sm:text-6xl font-extrabold text-deepNavy mb-16 text-center"
+          className="text-5xl sm:text-6xl font-extrabold text-deepNavy mb-16 "
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}

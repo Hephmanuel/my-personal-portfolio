@@ -66,7 +66,7 @@ const SkillCard: React.FC<{ category: SkillCategory }> = ({ category }) => (
 export default function Skills() {
   return (
     <section id="skills" className="py-24 md:py-36 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
         
         {/* Section Title explicitly uses text-accent-yellow, which is correct for contrast against the background */}
         <h2 className="text-5xl sm:text-6xl font-extrabold text-amber-200 mb-16 text-center">

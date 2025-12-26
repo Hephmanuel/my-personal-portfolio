@@ -77,17 +77,17 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className="py-24 md:py-36 bg-primaryBg"
+      className="py-24 md:py-12 bg-primaryBg px-4 md:px-0"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }} // Triggers animation when section enters view
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
         
         {/* Section Title */}
         <motion.h2 
-          className="text-7xl sm:text-6xl font-extrabold text-amber-200 mb-16"
+          className="text-5xl sm:text-6xl font-extrabold text-deepNavy mb-16"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}

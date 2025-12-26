@@ -42,7 +42,7 @@ const sectionVariants = {
 // --- Main Component ---
 export default function Project1Page() {
   return (
-    <div className="min-h-screen bg-primaryBg"> 
+    <div className="min-h-screen bg-primaryBg "> 
       
       {/* Fixed Navigation Header */}
       <header className="sticky top-0 z-40 w-full bg-deepNavy py-4 shadow-xl">
@@ -54,7 +54,7 @@ export default function Project1Page() {
       </header>
       
       {/* Main Content Area */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <main className="max-w-6xl mx-auto px-10 sm:px-10 lg:px-8 py-16 md:py-24">
         
         {/* Project Title and Overview */}
         <motion.header 
@@ -63,37 +63,43 @@ export default function Project1Page() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold text-deepNavy mb-4">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-deepNavy mb-12 px-12">
             {project.name}
           </h1>
           <p className="text-xl text-buttonText max-w-3xl mx-auto">
             {project.fullDescription}
           </p>
-          <div className="flex justify-center space-x-6 mt-6">
-            {/* Live Link Button */}
-            <a 
-              href='https://giftsofthespirit.netlify.app/'
+          
+          <div className="flex flex-wrap justify-center gap-4 mt-10">
+            {/* GitHub Link Button (Left - Yellow) */}
+            <motion.a 
+              href="https://github.com/Hephmanuel/spiritualgiftsweb"
               target="_blank" 
               rel="noopener noreferrer" 
-              className="inline-block text-deepNavy font-semibold hover:text-accentYellow transition underline items-center"
-            >
-              <LinkIcon className="w-5 h-5 mr-2" /> Live Demo
-            </a>
-            {/* GitHub Link Button */}
-            <a 
-              href='https://github.com/Hephmanuel/spiritualgiftsweb'
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="inline-block text-deepNavy font-semibold hover:text-accentYellow transition underline items-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center px-8 py-3 rounded-full bg-accentYellow text-buttonText font-bold shadow-lg hover:shadow-xl transition-all border border-deepNavy/10"
             >
               <Code className="w-5 h-5 mr-2" /> View Code
-            </a>
+            </motion.a>
+
+            {/* Live Link Button (Right - Navy) */}
+            <motion.a 
+              href={project.liveLink}
+              target="_blank" 
+              rel="noopener noreferrer" 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center px-8 py-3 rounded-full bg-deepNavy text-primaryBg font-bold shadow-lg hover:shadow-xl transition-all"
+            >
+              <LinkIcon className="w-5 h-5 mr-2" /> Live Demo
+            </motion.a>
           </div>
         </motion.header>
 
         {/* Section 1: Screenshots / Visuals (Creative Placement) */}
         <motion.section 
-          className="mb-20"
+          className="mb-20 "
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"

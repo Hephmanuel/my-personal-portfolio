@@ -33,7 +33,7 @@ export default function ContactCTA() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
           
           <motion.h2 
             className="text-5xl sm:text-6xl font-extrabold text-deepNavy mb-8"
