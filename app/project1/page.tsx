@@ -83,7 +83,7 @@ export default function Project1Page() {
               <Code className="w-5 h-5 mr-2" /> View Code
             </motion.a>
 
-            {/* Live Link Button (Right - Navy) */}
+            {/* Live Link Button */}
             <motion.a 
               href={project.liveLink}
               target="_blank" 
@@ -97,7 +97,7 @@ export default function Project1Page() {
           </div>
         </motion.header>
 
-        {/* Section 1: Screenshots / Visuals (Creative Placement) */}
+        {/* Section 1: Screenshots / Visuals (*/}
         <motion.section 
           className="mb-20 "
           variants={sectionVariants}
@@ -109,10 +109,10 @@ export default function Project1Page() {
             <ImageIcon className="w-6 h-6 mr-3 text-accentYellow" /> Screenshots & Mockups
           </h2>
           
-          {/* Creative Grid Layout for Screenshots - EQUAL SIZED COLUMNS, WIDER */}
+          {/* Creative Grid Layout for Screenshots*/}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-6 rounded-xl shadow-2xl border-2 border-deepNavy/10">
             
-            {/* Primary Screenshot - Now h-64 for larger view */}
+            {/* Primary Screenshot*/}
             <div className="h-64 rounded-lg overflow-hidden border-4 border-accentYellow/50 shadow-inner">
               <img 
                 src={'/spigifts.png'}
@@ -121,12 +121,12 @@ export default function Project1Page() {
               />
             </div>
             
-            {/* Secondary Screenshot - h-64 */}
+            {/* Secondary Screenshot */}
             <div className="h-64 rounded-lg overflow-hidden border-2 border-deepNavy/10 shadow-inner">
                <img src="/s2.png" alt="Mobile View" className="w-full h-full object-cover" /> 
             </div>
             
-            {/* Tertiary Screenshot - h-64 (will wrap below on 2-column grid) */}
+            {/* Tertiary Screenshot */}
             <div className="h-64 rounded-lg overflow-hidden border-2 border-deepNavy/10 shadow-inner md:col-span-2 md:max-w-md md:mx-auto">
                <img src="/s3.png" alt="Dashboard View" className="w-full h-full object-cover" /> 
             </div>
@@ -134,7 +134,7 @@ export default function Project1Page() {
           </div>
         </motion.section>
 
-        {/* Section 2: Problem Solved & Features (Creative Two Column Layout) */}
+        {/* Section 2: Problem Solved & Features */}
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           
           {/* Problem Solved */}
@@ -174,7 +174,7 @@ export default function Project1Page() {
           </motion.section>
         </div>
 
-        {/* Section 3: Technologies Used & Lessons Learned (Horizontal Split) */}
+        {/* Section 3: Technologies Used & Lessons Learned in a horizontal split */}
         <div className="grid md:grid-cols-2 gap-12">
           
           {/* Technologies Used */}
@@ -217,7 +217,7 @@ export default function Project1Page() {
 
       </main>
 
-      {/* FOOTER IS NOW HERE */}
+      {/* FOOTER  */}
       <Footer /> 
     </div>
   );

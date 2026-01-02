@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
-// Define a type for a single project item
+// a type for a single project item
 interface Project {
   id: number;
   title: string;
@@ -13,7 +13,7 @@ interface Project {
   href: string; 
 }
 
-// Mock Data for Projects
+// Data for Projects
 const projectsData: Project[] = [
   {
     id: 1,
@@ -68,7 +68,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         />
       </div>
 
-      {/* Header - Now includes an arrow icon only for clickable projects */}
+      {/* Header */}
       <div className="mb-2 flex items-center justify-between">
         <h3 className={`text-2xl font-bold text-deepNavy ${isClickable ? 'group-hover:underline' : ''}`}>
           {project.title}

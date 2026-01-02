@@ -8,10 +8,9 @@ export default function Header() {
       <nav className="hidden md:flex gap-10 text-deepNavy font-medium">
         <a href="#home" className="hover:underline">Home</a>
         <a href="#about" className="hover:underline">About</a>
-        <a href="#work" className="hover:underline">Work</a>
       </nav>
 
-      {/* Icons (placeholder shapes like in template) */}
+      {/* Just for design purposes */}
       <div className="flex gap-4 text-deepNavy text-xl">
         <span>●</span>
         <span>◆</span>

@@ -8,7 +8,7 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3, // Slower stagger for simple, sequential paragraphs
+      staggerChildren: 0.3, 
     },
   },
 };
@@ -55,7 +55,7 @@ const AboutSectionItem: React.FC<typeof aboutData[0]> = ({ icon: Icon, title, co
     
     <p 
       className="text-lg text-buttonText leading-relaxed max-w-4xl mb-4"
-      // Using dangerouslySetInnerHTML to correctly render the markdown formatting (e.g., **bold**)
+      // Using dangerouslySetInnerHTML to correctly render the markdown formatting 
       dangerouslySetInnerHTML={{ __html: content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}
     />
     
@@ -77,14 +77,14 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className="py-24 md:py-12 bg-primaryBg px-4 md:px-0"
+      className="py-24 md:py-12 bg-primaryBg px-4 md:px-8 sm:px-8"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }} // Triggers animation when section enters view
     >
       <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
-        
+         
         {/* Section Title */}
         <motion.h2 
           className="text-5xl sm:text-6xl font-extrabold text-deepNavy mb-16"
@@ -96,7 +96,7 @@ export default function About() {
           about me.
         </motion.h2>
 
-        {/* Single Column Structure for Requirements (Who, What, Focus) */}
+        {/* Single Column Structure for Requirements */}
         <div className="max-w-4xl mx-auto">
           {aboutData.map((data, index) => (
             <AboutSectionItem key={index} {...data} />

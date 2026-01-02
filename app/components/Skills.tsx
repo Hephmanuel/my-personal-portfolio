@@ -1,6 +1,11 @@
 import { Code, Brush, LayoutGrid, Zap, Database, BookOpen } from 'lucide-react'; // Icons for categorization
 
-// Define a type for a single skill category
+
+
+//page not used
+
+
+// a type for a single skill category
 interface SkillCategory {
   id: number;
   title: string;
@@ -8,7 +13,7 @@ interface SkillCategory {
   skills: string[];
 }
 
-// Mock Data for Skills
+// Data for Skills
 const skillsData: SkillCategory[] = [
   {
     id: 1,
@@ -45,14 +50,14 @@ const SkillCard: React.FC<{ category: SkillCategory }> = ({ category }) => (
     {/* Icon uses text-navy */}
     <category.icon className="w-8 h-8 text-navy mb-4" />
     
-    {/* Title now explicitly uses text-navy */}
+    {/* Title */}
     <h3 className="text-xl font-bold text-deepNavy mb-4 border-b border-accent-yellow/50 pb-2">
       {category.title}
     </h3>
     
     <ul className="space-y-2">
       {category.skills.map(skill => (
-        // List item text now explicitly uses text-dark-text
+        // List item 
         <li key={skill} className="text-dark-text flex items-center">
           <span className="inline-block w-2 h-2 bg-accent-yellow rounded-full mr-3 border border-navy"></span>
           {skill}
@@ -68,7 +73,7 @@ export default function Skills() {
     <section id="skills" className="py-24 md:py-36 bg-white">
       <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
         
-        {/* Section Title explicitly uses text-accent-yellow, which is correct for contrast against the background */}
+        {/* Section Title /}
         <h2 className="text-5xl sm:text-6xl font-extrabold text-amber-200 mb-16 text-center">
           my skills.
         </h2>

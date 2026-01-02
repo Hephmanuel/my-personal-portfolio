@@ -8,6 +8,8 @@ import gsap from "gsap";
 
 const profileImage = "/profileImage.png";
 
+//Used gsap and framer-motion for animations. Again, this is not required but I wanted to task myself with my current skillset.
+
 /* ------------------------- Typing Animation Hook ------------------------- */
 function useTypewriter(text: string, speed = 90) {
   const [display, setDisplay] = useState("");
@@ -108,7 +110,7 @@ export default function Hero() {
     });
   };
 
-  /* GSAP entrance animation - now scales the entire image+shapes group */
+  /* GSAP entrance animation */
   useEffect(() => {
     if (containerRef.current) {
       gsap.fromTo(
@@ -124,8 +126,9 @@ export default function Hero() {
     }
   }, []);
 
+  //main
   return (
-    <section id="home" className="py-16 md:py-24 bg-primaryBg px-4 md:px-0">
+    <section id="home" className="py-16 md:py-24 bg-primaryBg px-4 md:px-8 sm:px-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
 
         {/* Text Column */}
@@ -168,10 +171,6 @@ export default function Hero() {
 
         {/* Image + Shapes Section */}
         <div className="flex justify-center md:justify-end">
-          {/* The 'containerRef' is now on the outermost wrapper.
-              This ensures that the image and shapes are treated as one unit.
-              The 'relative' class here acts as the anchor point for the absolute shapes.
-          */}
           <div 
             ref={containerRef}
             className="relative w-72 h-72 sm:w-96 sm:h-96"
@@ -185,7 +184,7 @@ export default function Hero() {
               />
             </div>
 
-            {/* Floating Shapes - anchored to the container corners */}
+            {/* Floating Shapes*/}
             <GraphicShapes />
           </div>
         </div>
